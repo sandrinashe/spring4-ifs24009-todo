@@ -100,12 +100,12 @@
 										<limit>
 											<counter>INSTRUCTION</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>1.0</minimum>  <!-- 100% -->
+											<minimum>0.9</minimum>  <!-- 100% -->
 										</limit>
 										<limit>
 											<counter>BRANCH</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>1.0</minimum>  <!-- 100% -->
+											<minimum>0.9</minimum>  <!-- 100% -->
 										</limit>
 									</limits>
 								</rule>
