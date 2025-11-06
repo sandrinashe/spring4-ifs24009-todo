@@ -116,7 +116,7 @@ class HomeControllerTest {
     void testPerolehanNilai_NoDataLines() {
         String data = "10\n10\n10\n20\n20\n30\n";
         String result = controller.perolehanNilai(encode(data));
-        assertFalse(result.contains(">> Partisipatif: 0/100 (0.00/10)"));
+        assertTrue(result.contains(">> Partisipatif: 0/100 (0.00/10)"));
         assertTrue(result.contains(">> Grade: E"));
     }
 

@@ -13,7 +13,7 @@ public class HomeController {
     public String sayHello(@PathVariable String name) {
         return "Hello, " + name + "!";
     }
-    // ✅ Method 1: Informasi NIM
+    // Method 1: Informasi NIM
     @GetMapping("/informasiNim/{nim}")
     public String informasiNim(@PathVariable String nim) {
         HashMap<String, String> prodi = new HashMap<>();
@@ -37,7 +37,7 @@ public class HomeController {
         result.append("<p>Urutan: ").append(urutan).append("</p>");
         return result.toString();
     }
-    // ✅ Method 2: perolehanNilai
+    // Method 2: perolehanNilai
   @GetMapping("/perolehanNilai/{strBase64}")
 public String perolehanNilai(@PathVariable String strBase64) {
     try {
@@ -47,7 +47,7 @@ public String perolehanNilai(@PathVariable String strBase64) {
         if (lines.length < 6) {
             return "<p>Input tidak valid. Minimal harus memiliki 6 baris bobot.</p>";
         }
-        // ✅ Ambil bobot dari 6 baris pertama
+        // Ambil bobot dari 6 baris pertama
         int bobotPA = Integer.parseInt(lines[0].trim());
         int bobotT = Integer.parseInt(lines[1].trim());
         int bobotK = Integer.parseInt(lines[2].trim());
@@ -61,7 +61,7 @@ public String perolehanNilai(@PathVariable String strBase64) {
         int totalP = 0, maxP = 0;
         int totalUTS = 0, maxUTS = 0;
         int totalUAS = 0, maxUAS = 0;
-        // ✅ Mulai membaca data nilai dari baris ke-7
+        // Mulai membaca data nilai dari baris ke-7
         for (int i = 6; i < lines.length; i++) {
             String line = lines[i].trim();
             if (line.isEmpty()) continue;
@@ -145,11 +145,11 @@ public String perolehanNilai(@PathVariable String strBase64) {
         result.append("</pre>");
         return result.toString();
     } catch (Exception e) {
-        // ✅ PERBAIKAN: Tag HTML yang benar
+        // PERBAIKAN: Tag HTML yang benar
         return "<p style='color: red;'>Error processing data: " + e.getMessage() + "</p>";
     }
 }
-// ✅ Method 3: perbedaanL (Sudah Diperbaiki)
+// Method 3: perbedaanL (Sudah Diperbaiki)
 @GetMapping("/perbedaanL/{strBase64}")
 public String perbedaanL(@PathVariable String strBase64) {
     try {
@@ -278,7 +278,7 @@ public String perbedaanL(@PathVariable String strBase64) {
         return "<p style='color: red;'>Error processing data: " + e.getMessage() + "</p>";
     }
 }
-// ✅ Method 4: palingTer (FINAL 100% Coverage)
+// Method 4: palingTer (FINAL 100% Coverage)
 @GetMapping("/palingTer/{strBase64}")
 public String palingTer(@PathVariable String strBase64) {
     try {
