@@ -112,6 +112,15 @@ class HomeControllerTest {
     }
 
     @Test
+    @DisplayName("Menangani input tanpa data nilai (hanya 6 baris bobot)")
+    void testPerolehanNilai_NoDataLines() {
+        String data = "10\n10\n10\n20\n20\n30\n";
+        String result = controller.perolehanNilai(encode(data));
+        assertFalse(result.contains(">> Partisipatif: 0/100 (0.00/10)"));
+        assertTrue(result.contains(">> Grade: E"));
+    }
+
+    @Test
     @DisplayName("Menangani beberapa entri untuk komponen yang sama")
     void testPerolehanNilai_MultipleEntries() {
         String data = "10\n10\n10\n20\n20\n30\n" +
